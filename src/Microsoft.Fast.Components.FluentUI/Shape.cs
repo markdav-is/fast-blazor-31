@@ -13,7 +13,12 @@ namespace Microsoft.Fast.Components.FluentUI
     internal static class ShapeExtensions
     {
         private static Dictionary<Shape, string> _orientationValues =
-            Enum.GetValues<Shape>().ToDictionary(id => id, id => Enum.GetName(id).ToLowerInvariant());
+            new Dictionary<Shape, string>()
+            {
+                {Shape.Rect,"Rect" },
+                {Shape.Circle,"Circle" },
+               
+            };
 
         public static string ToAttributeValue(this Shape? value) => value == null ? null : _orientationValues[value.Value];
     }

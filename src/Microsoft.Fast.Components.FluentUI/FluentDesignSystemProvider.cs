@@ -17,7 +17,7 @@ namespace Microsoft.Fast.Components.FluentUI
             builder.OpenElement(0, "fluent-design-system-provider");
 
             if (AdditionalAttributes == null || AdditionalAttributes.Count == 0)
-                builder.AddAttribute(1, "use-defaults");
+                builder.AddAttribute(1, "use-defaults",true);
             else
                 builder.AddMultipleAttributes(1, AdditionalAttributes);
 
