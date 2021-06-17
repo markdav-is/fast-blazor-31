@@ -28,12 +28,7 @@ namespace Microsoft.Fast.Components.FluentUI
     internal static class PositionExtensions
     {
         private static Dictionary<Position, string> _positionValues =
-             new Dictionary<Position, string>()
-            {
-                {Position.Above,"Above" },
-                {Position.Below,"Below" },
-
-            };
+            EnumHelper.CreateEnumLowerValueDictionary<Position>();
 
         public static string ToAttributeValue(this Position? value) => value == null ? null : _positionValues[value.Value];
     }

@@ -27,12 +27,7 @@ namespace Microsoft.Fast.Components.FluentUI
     internal static class FillExtensions
     {
         private static Dictionary<Fill, string> _fillValues =
-             new Dictionary<Fill, string>()
-            {
-                {Fill.Highlight,"Highlight" },
-                {Fill.Lowlight,"Lowlight" },
-
-            };
+            EnumHelper.CreateEnumLowerValueDictionary<Fill>();
 
         public static string ToAttributeValue(this Fill? value) => value == null ? null : _fillValues[value.Value];
     }
