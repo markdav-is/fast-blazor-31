@@ -11,15 +11,10 @@ namespace Microsoft.Fast.Components.FluentUI
 
     internal static class ExpandModeExtensions
     {
-        //private static Dictionary<ExpandMode, string> _expandModeValues =
-        //    Enum.GetValues<ExpandMode>().ToDictionary(id => id, id => Enum.GetName(id).ToLowerInvariant());
-
+       
 
         private static Dictionary<ExpandMode, string> _expandModeValues =
-             new Dictionary<ExpandMode, string>()
-            {
-                {ExpandMode.Single,"Signal" },
-            };
+            EnumHelper.CreateEnumLowerValueDictionary<ExpandMode>();
 
         public static string ToAttributeValue(this ExpandMode? value) => value == null ? null : _expandModeValues[value.Value];
     }

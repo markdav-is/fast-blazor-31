@@ -13,11 +13,7 @@ namespace Microsoft.Fast.Components.FluentUI
     internal static class ColorExtensions
     {
         private static Dictionary<Color, string> _colorValues =
-              new Dictionary<Color, string>()
-            {
-                {Color.Highlight,"Highlight" },
-                 {Color.Lowlight,"Lowlight" }
-              };
+            EnumHelper.CreateEnumLowerValueDictionary<Color>();
 
         public static string ToAttributeValue(this Color? value) => value == null ? null : _colorValues[value.Value];
     }

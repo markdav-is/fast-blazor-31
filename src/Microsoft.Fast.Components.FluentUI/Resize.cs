@@ -14,12 +14,7 @@ namespace Microsoft.Fast.Components.FluentUI
     internal static class ResizeExtensions
     {
         private static Dictionary<Resize, string> _resizeValues =
-            new Dictionary<Resize, string>()
-            {
-                {Resize.Horizontal,"Horizontal" },
-                {Resize.Vertical,"Vertical" },
-                {Resize.Both,"Both" }
-            };
+            EnumHelper.CreateEnumLowerValueDictionary<Resize>();
 
         public static string ToAttributeValue(this Resize? value) => value == null ? null : _resizeValues[value.Value];
     }

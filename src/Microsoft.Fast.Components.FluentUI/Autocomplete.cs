@@ -14,13 +14,7 @@ namespace Microsoft.Fast.Components.FluentUI
     internal static class AutocompleteExtensions
     {
         private static Dictionary<Autocomplete, string> _autocompleteValues =
-               new Dictionary<Autocomplete, string>()
-            {
-                {Autocomplete.Inline,"Inline" },
-                {Autocomplete.List,"List" },
-                {Autocomplete.Both,"Both" },
-               
-            };
+            EnumHelper.CreateEnumLowerValueDictionary<Autocomplete>();
 
         public static string ToAttributeValue(this Autocomplete? value) => value == null ? null : _autocompleteValues[value.Value];
     }

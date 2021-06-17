@@ -12,18 +12,9 @@ namespace Microsoft.Fast.Components.FluentUI
 
     internal static class DirectionExtensions
     {
-        //private static Dictionary<Direction, string> _directionValues =
-        //    Enum.GetValues<Direction>().ToDictionary(id => id, id => Enum.GetName(id).ToLowerInvariant());
-
-        /// <summary>
-        /// making bacckwards compatible with netcore31 by hard coding
-        /// </summary>
+        
         private static Dictionary<Direction, string> _directionValues =
-            new Dictionary<Direction, string>()
-            {
-                {Direction.Next,"Next" },
-                {Direction.Previous,"Previous" }
-            };
+            EnumHelper.CreateEnumLowerValueDictionary<Direction>();
 
         public static string ToAttributeValue(this Direction? value) => value == null ? null : _directionValues[value.Value];
     }
